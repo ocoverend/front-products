@@ -1,0 +1,23 @@
+<!-- data table products -->
+<app-product-search (searchEvent)="handleSearch($event)"></app-product-search>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Clave</th>
+      <th>Tipo</th>
+      <th>Activo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+        <td>{{ product.name }}</td>
+        <td>{{ product.productKey }}</td>
+        <td>{{ product.typeProduct }}</td>
+        <td>{{ product.active }}</td>
+        <td>
+            <button (click)="openEditProduct(product.id)">Editar</button>
+        </td>
+  </tbody>
+</table>

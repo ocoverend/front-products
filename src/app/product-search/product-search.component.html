@@ -1,0 +1,17 @@
+<div class="search-container" style="display: flex; justify-content: space-between; align-items: center;">
+    
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Buscar productos" (keyup)="search()" />
+
+    <!-- select  of types of product-->
+    <!-- product-search.component.html -->
+
+    <select [(ngModel)]="selectedType" (change)="searchByType()">
+      <option value="">Todos</option>
+      <option *ngFor="let type of productTypes" [value]="type.id">{{ type.name }}</option>
+    </select>
+
+    <!-- button add product -->
+    <button (click)="openAddProduct()">Agregar</button>
+
+  </div>
+  

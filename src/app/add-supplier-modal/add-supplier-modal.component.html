@@ -1,0 +1,28 @@
+<!-- add-supplier.component.html -->
+<div class="modal-header">
+    <h4 class="modal-title">Agregar Producto</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <form [formGroup]="addSupplierForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="supplierId">Proveedor:</label>
+            <select class="form-control" id="supplierId" formControlName="supplierId" required>
+              <option *ngFor="let type of suppliers" [value]="type.id">{{ type.name }}</option>
+            </select>
+          </div>
+        <div class="form-group">
+            <label for="supplierProductKey">Clave proveedor:</label>
+            <input type="text" id="supplierProductKey" formControlName="supplierProductKey" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="supplierCost">Cost proveedor:</label>
+            <input type="number" id="supplierCost" formControlName="supplierCost" class="form-control" />
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Add Supplier</button>
+    </form>
+</div>
+  

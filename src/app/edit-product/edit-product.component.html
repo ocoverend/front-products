@@ -1,0 +1,63 @@
+<!-- button add supplier -->
+
+<div class="card">
+    <div class="card-header">
+        <h5>Producto</h5>
+    </div>
+    <div class="card-body">
+        <!-- Ocultar el campo ID -->
+        <input type="hidden" [(ngModel)]="product.id">
+        <div class="mb-3">
+            <label for="name" class="form-label">Nombre:</label>
+            <input type="text" id="name" class="form-control" [(ngModel)]="product.name">
+        </div>
+
+        <div class="mb-3">
+            <label for="productKey" class="form-label">Clave:</label>
+            <input type="text" id="productKey" class="form-control" [(ngModel)]="product.productKey">
+        </div>
+
+        <div class="mb-3">
+            <label for="price" class="form-label">Precio:</label>
+            <input type="text" id="price" class="form-control" [(ngModel)]="product.price">
+        </div>
+
+        <div class="mb-3">
+            <label for="typeProduct" class="form-label">Tipo de Producto:</label>
+            <input type="text" id="typeProduct" class="form-control" [(ngModel)]="product.typeProduct">
+        </div>
+
+        <div class="mb-3">
+            <label for="active" class="form-label">Activo:</label>
+            <input type="text" id="active" class="form-control" [(ngModel)]="product.active">
+        </div>
+    </div>
+</div>
+<!-- List of providers create table -->
+<button type="button" class="btn btn-primary" (click)="updateProduct()">Actualizar producto</button>
+<button type="button" class="btn btn-primary" (click)="addSupplier()">Agregar Proveedor</button>
+<br>
+
+<div class="card">
+    <div class="card-header">
+        <h5>Proveedores</h5>
+    </div>
+    <div class="card-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Clave proveedor</th>
+                    <th>Precio proveedor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let provider of suppliers">
+                    <td>{{ provider.supplierName }}</td>
+                    <td>{{ provider.supplierProductKey }}</td>
+                    <td>{{ provider.supplierCost }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<!-- add-product-modal.component.html -->
+<div class="modal-header">
+    <h4 class="modal-title">Agregar Producto</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="addProductForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Nombre:</label>
+        <input type="text" class="form-control" id="name" formControlName="name" required>
+      </div>
+      <div class="form-group">
+        <label for="price">Precio:</label>
+        <input type="number" class="form-control" id="price" formControlName="price" required>
+      </div>
+      <div class="form-group">
+        <label for="productKey">Clave del Producto:</label>
+        <input type="text" class="form-control" id="productKey" formControlName="productKey" required>
+      </div>
+      <div class="form-group">
+        <label for="typeProduct">Tipo de Producto:</label>
+        <select class="form-control" id="typeProduct" formControlName="typeProduct" required>
+          <option *ngFor="let type of productTypes" [value]="type.id">{{ type.name }}</option>
+        </select>
+      </div>
+      <br>
+      <button type="submit" class="btn btn-primary">Agregar Producto</button>
+    </form>
+  </div>
+  
+  

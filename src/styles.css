@@ -1,1 +1,2 @@
-/* You can add global styles to this file, and also import other style files */
+/* Usa una ruta relativa al archivo CSS actual */
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
